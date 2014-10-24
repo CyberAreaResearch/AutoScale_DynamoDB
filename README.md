@@ -2,6 +2,7 @@ What is AutoScale DynamoDB
 ====================
 
 A PHP scripts which enable to automatic capacity scaling Amazon DynamoDB.
+
 Amazon DynamoDBのスループットを自動的にスケーリングするためのPHPスクリプトです。
 
 Similer project
@@ -26,18 +27,18 @@ Read.Max = 10000
 Write.Min = 5
 Write.Max = 7000
 ```
-##起動方法
+###起動方法
 
-#ログっぽいものを出力する
+####ログっぽいものを出力する
 
 /home/ec2-user/AutoScale/AutoScale_DynamoDB.php
 
-#動作に問題が無ければ、こんな感じで動かしてください。
+####動作に問題が無ければ、こんな感じで動かしてください。
 
 /home/ec2-user/AutoScale/AutoScale_DynamoDB.php < /dev/null > /dev/null &
 
 
-##処理内容
+####処理内容
 5分ごとに、各テーブルに設定されたスループット値(ProvisionedCapacityUnit値)と
 直近5分間における使用スループット値（ConsumedCapacityUnit値）とを比較して、
 各テーブルのスループット値利用率を求めます。その上で、下記の条件でチェックを
@@ -55,8 +56,8 @@ Write.Max = 7000
 Case Study
 -----------
 
-* slideshareに公開した下記の資料に説明を載せています。 [ビッグデータだけじゃない Amazon DynamoDBの活用事例](http://www.slideshare.net/KenNakanishi/amazon-dynamodb-37348630)
-[AWS summit tokyo で講演した内容の録画](https://www.youtube.com/watch?v=EGZzRpWZEhY)
+* [slideshareに公開した資料] (http://www.slideshare.net/KenNakanishi/amazon-dynamodb-37348630)
+* [AWS summit tokyo で講演した内容の録画](https://www.youtube.com/watch?v=EGZzRpWZEhY)
 
 Requirements
 ------------
